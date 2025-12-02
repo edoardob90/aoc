@@ -1,0 +1,14 @@
+*.x
+.vscode
+*.code-workspace
+ascii_progress.py
+.cookie
+test*
+.DS_Store
+*png
+*jpeg
+*jpg
+*pdf
+build
+*.egg-info
+__pycache__
