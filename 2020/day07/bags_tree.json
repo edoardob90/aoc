@@ -1,0 +1,141 @@
+{
+  "gold": {
+    "children": [
+      {
+        "red_1dbec33e-670a-40d4-aa1d-f101ac1a528c": {
+          "children": [
+            {
+              "orange_64e9a4f0-44f3-4ad9-b04d-3da70e6b345b": {
+                "children": [
+                  {
+                    "yellow_2eed76de-dd73-4519-853c-d833937c5651": {
+                      "children": [
+                        "green_db881244-355f-4d31-867c-e8385075288c",
+                        "green_cd174e87-618e-4ac6-82cb-c9ddeddc590c",
+                        "green_417610b4-3344-41d4-a044-f944d829f9be",
+                        "purple_6154a3b9-4ed3-4ea8-9a80-9eeb70f62189",
+                        "purple_25464fce-4c39-4123-91f2-2d022b4251db",
+                        "blue_95f4697c-5cea-408b-b902-f43a38c8374c"
+                      ]
+                    }
+                  },
+                  {
+                    "yellow_06155c3c-fd5a-4aa1-83ff-ffc6a479fdda": {
+                      "children": [
+                        "green_7f1c3e8e-0773-402b-95f6-a32980e29f9c",
+                        "green_b77e6ed9-9e24-4be2-8a27-501e28ee14b5",
+                        "green_0af3a6c0-b7e1-4c81-9a1e-c2c3c192bab5",
+                        "purple_21906019-5cb2-4536-b841-d802ad49136e",
+                        "purple_b853e849-825e-4b82-a0a9-42164b816e5e",
+                        "blue_1cba1026-0d9d-4353-b145-b692e74383c6"
+                      ]
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "orange_d7b21dee-5395-489e-8ae9-053aadde2eb2": {
+                "children": [
+                  {
+                    "yellow_a5657ea2-0297-48f8-a423-594c97b89fc0": {
+                      "children": [
+                        "green_ce5aecb4-b9e6-4f8c-86ea-e932c7dd96b5",
+                        "green_976a81f9-9f9e-45e9-85a4-57cf9c8054bf",
+                        "green_8b1037f1-748f-4e6a-a9bb-472a7f055ece",
+                        "purple_ea7a5cd8-570b-4241-b6c5-970ea8237640",
+                        "purple_46d29b04-a237-4a74-bbae-9657e0258682",
+                        "blue_6a8b26b7-afcf-4e72-bce1-303a899f581a"
+                      ]
+                    }
+                  },
+                  {
+                    "yellow_88c52f1f-c610-4e6b-a59e-bf0fccd09957": {
+                      "children": [
+                        "green_967611d8-b81d-4d1e-bd32-3df6005147fd",
+                        "green_908721e6-62ba-4ab9-b85c-04ba9154c25a",
+                        "green_6ac23908-c89b-43e8-b154-e2306d9a1d6f",
+                        "purple_e9726a1d-e0ad-48ac-ae82-bc0ac5b34e2e",
+                        "purple_6f6ba12b-76cc-4a68-a32a-dc28a7d761ca",
+                        "blue_95f9bb29-531d-4855-b18f-a9a85680a456"
+                      ]
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      },
+      {
+        "red_d7942b40-c106-40ec-bfac-cf69c1ff70b7": {
+          "children": [
+            {
+              "orange_73f2c8e7-505c-4450-a4b0-97baa1a24fbd": {
+                "children": [
+                  {
+                    "yellow_87b116b8-4e39-4fd4-9d71-1519614a34bd": {
+                      "children": [
+                        "green_6815f83a-f185-4f3d-981a-036ca2cce180",
+                        "green_0253e103-ca08-4337-a50e-e8123f5d1ccc",
+                        "green_2982ecc1-77a5-4ae2-a48c-e1a3da58df20",
+                        "purple_441f7e09-8684-49e0-a68d-a2c8a00b5d96",
+                        "purple_4d2cb227-79ee-4aae-8a4e-1b4f4937c750",
+                        "blue_44fb1b9c-e4c7-4824-b1af-e242d85bc5c4"
+                      ]
+                    }
+                  },
+                  {
+                    "yellow_13fd8b77-8827-4990-b477-c82f5a57f713": {
+                      "children": [
+                        "green_9a4db2ce-e6df-4078-9c07-e9febd7084e4",
+                        "green_b25911a1-b674-4c98-ac39-2c5d683135e9",
+                        "green_69bca1c9-85b2-4588-8807-9867844a7774",
+                        "purple_72c038a8-48f0-4baa-9f05-428484ff181f",
+                        "purple_05038cb3-d844-404d-9112-463267cd9863",
+                        "blue_3aa02d6e-bd4e-46c7-a0b7-06b2867048e3"
+                      ]
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "orange_9d33aa0c-2d72-479e-ad8f-d8eb40bd037a": {
+                "children": [
+                  {
+                    "yellow_546af92d-6806-4cd3-b36a-40dcbc3a5946": {
+                      "children": [
+                        "green_245949ac-ff82-4992-b7d5-14ae3da5eeb8",
+                        "green_df153c49-e8ca-44c7-b980-c7f877b068b2",
+                        "green_b76b956d-c321-4a33-8104-59c2032ee132",
+                        "purple_ba8adec6-c2a4-4264-9c62-91aceb99e9b2",
+                        "purple_f4a55f7c-fbca-4846-bcb4-9701e7576a31",
+                        "blue_d7fce30f-ef7c-4607-84c6-192b9a692fe3"
+                      ]
+                    }
+                  },
+                  {
+                    "yellow_9dcdb5ca-6894-41ce-91cf-6dddbea55d3a": {
+                      "children": [
+                        "green_94f16be2-94c0-4aa8-9f70-cf5a5b22ac6b",
+                        "green_7193e173-68bc-41e4-82c3-e0a85e0f5a67",
+                        "green_ed84c4fb-6cf5-4f97-9c40-2d816e7b5a66",
+                        "purple_a7b80e48-54be-4596-b07e-9761d15c4d87",
+                        "purple_4e759653-35c0-4d0a-b9d0-604c28e248b1",
+                        "blue_27b2f842-d55c-4bc8-9ca2-95aeaee9f8bd"
+                      ]
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      },
+      "blue_91ec8e5f-5455-496b-ac74-e0bc3e4e45b5",
+      "blue_e2c3f9bc-8830-4a95-b7b7-c04502a49bc1",
+      "blue_c40b7a03-554e-4c32-a0bc-b170ef270362"
+    ]
+  }
+}
