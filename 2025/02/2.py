@@ -5,8 +5,6 @@ import pathlib
 import sys
 import re
 
-import utils
-
 
 def parse_data(puzzle_input: str):
     """Parse input"""
