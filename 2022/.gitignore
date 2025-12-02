@@ -1,0 +1,12 @@
+*.fish
+*.sh
+.DS_Store
+*.png
+*.jpg
+*.jpeg
+
+__pycache__
+
+# irrelevant Python files
+*_*.py
+__*.py
