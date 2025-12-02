@@ -1,0 +1,38 @@
+[env]
+_.python.venv = { path = ".venv", create = true }
+PYTHONPATH = "{{config_root}}"
+
+[tools]
+python = "pypy3.11-7.3.20"
+
+[tasks.new]
+description = "Scaffold a new AoC day (defaults to today)"
+run = """
+#!/usr/bin/env bash
+YEAR=${1:-$(date +%Y)}
+DAY=${2:-$(date +%-d)}
+uv run --with copier,requests,beautifulsoup4,pypandoc,advent-of-code-data,click \
+  copier copy ./template/copier . --trust \
+  --data year=$YEAR --data day=$DAY --data year_dir=true
+"""
+
+[tasks.aoc]
+description = "Run solution: mise run aoc [year] [day] [input]"
+run = """
+#!/usr/bin/env bash
+YEAR=${1:-$(date +%Y)}
+DAY=${2:-$(date +%-d)}
+INPUT=${3:-input.txt}
+cd "$MISE_PROJECT_ROOT/$YEAR/$(printf '%02d' $DAY)"
+pypy $DAY.py "$INPUT"
+"""
+
+[tasks.aot]
+description = "Run solution with example: mise run aot [year] [day]"
+run = """
+#!/usr/bin/env bash
+YEAR=${1:-$(date +%Y)}
+DAY=${2:-$(date +%-d)}
+cd "$MISE_PROJECT_ROOT/$YEAR/$(printf '%02d' $DAY)"
+pypy $DAY.py example*.txt
+"""

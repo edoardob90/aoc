@@ -1,0 +1,19 @@
+# Copyrighted AoC content (inputs & puzzle text)
+input.txt
+prompt.md
+readme.md
+README.md
+
+# Template (separate repo/submodule)
+template/
+
+# System/editor
+.DS_Store
+.vscode
+.env
+
+# Python
+.python-version
+.venv/
+__pycache__/
+*.pyc
