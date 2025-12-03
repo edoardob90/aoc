@@ -1,0 +1,45 @@
+#!/usr/bin/env python3
+"""AoC day 3, 2025: Lobby"""
+
+import pathlib
+import sys
+
+
+def parse_data(puzzle_input: str):
+    """Parse input"""
+    return puzzle_input.splitlines()
+
+
+def largest_number(digits: str, max_len: int = 2):
+    result = ""
+    start = 0
+
+    for i in range(max_len):
+        search = digits[start : len(digits) - max_len + i + 1]
+        result += (M := max(search))
+        start += search.index(M) + 1
+    
+    return int(result)
+
+
+def part1(data):
+    """Solve part 1"""
+    return sum(largest_number(line) for line in data)  
+
+
+def part2(data):
+    """Solve part 2"""
+    return sum(largest_number(line, 12) for line in data)
+
+
+def solve(puzzle_input: str):
+    """Solve the puzzle for the given input"""
+    data = parse_data(puzzle_input)
+    return part1(data), part2(data)
+
+
+if __name__ == "__main__":
+    for path in sys.argv[1:]:
+        print(f"\n{path}:")
+        solutions = solve(pathlib.Path(path).read_text().strip())
+        print("\n".join(str(s) for s in solutions))
