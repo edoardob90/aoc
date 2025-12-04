@@ -17,22 +17,29 @@ uv run --with copier,requests,beautifulsoup4,pypandoc,advent-of-code-data,click 
 """
 
 [tasks.aoc]
-description = "Run solution: mise run aoc [year] [day] [input]"
+description = "Run solution: mise run aoc [day] [year] [input]"
 run = """
 #!/usr/bin/env bash
-YEAR=${1:-$(date +%Y)}
-DAY=${2:-$(date +%-d)}
-INPUT=${3:-input.txt}
+case $#:${% raw %}{#{% endraw %}1} in
+  0:*) DAY=$(date +%-d); YEAR=$(date +%Y); INPUT=input.txt ;;
+  1:1|1:2) DAY=$1; YEAR=$(date +%Y); INPUT=input.txt ;;
+  1:*) echo "Error: year without day doesn't make sense" >&2; exit 1 ;;
+  *) DAY=$1; YEAR=$2; INPUT=${3:-input.txt} ;;
+esac
 cd "$MISE_PROJECT_ROOT/$YEAR/$(printf '%02d' $DAY)"
 pypy $DAY.py "$INPUT"
 """
 
 [tasks.aot]
-description = "Run solution with example: mise run aot [year] [day]"
+description = "Run solution with example: mise run aot [day] [year]"
 run = """
 #!/usr/bin/env bash
-YEAR=${1:-$(date +%Y)}
-DAY=${2:-$(date +%-d)}
+case $#:${% raw %}{#{% endraw %}1} in
+  0:*) DAY=$(date +%-d); YEAR=$(date +%Y) ;;
+  1:1|1:2) DAY=$1; YEAR=$(date +%Y) ;;
+  1:*) echo "Error: year without day doesn't make sense" >&2; exit 1 ;;
+  *) DAY=$1; YEAR=$2 ;;
+esac
 cd "$MISE_PROJECT_ROOT/$YEAR/$(printf '%02d' $DAY)"
 pypy $DAY.py example*.txt
 """
