@@ -12,7 +12,7 @@ run = """
 YEAR=${1:-$(date +%Y)}
 DAY=${2:-$(date +%-d)}
 uv run --with copier,requests,beautifulsoup4,pypandoc,advent-of-code-data,click \
-  copier copy ./template/copier . --trust \
+  copier copy gh:edoardob90/aoc-copier-template . --trust \
   --data year=$YEAR --data day=$DAY --data year_dir=true
 """
 
