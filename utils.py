@@ -142,12 +142,13 @@ class Timer:
         >>> print(f"Took {t.elapsed:.2f}s")  # doctest: +SKIP
     """
 
-    text: str = "Elapsed time: {:0.4f} {:s}"
+    text: str = "Elapsed: {:0.4f} {:s}"
     unit: str = "ms"
     logger: Callable[[str], None] | None = print
-    _start_time: float | None = field(default=None, init=False, repr=False)
     elapsed: float = field(default=0.0, init=False, repr=False)
 
+    _func_name: str | None = field(default=None, init=False, repr=False)
+    _start_time: float | None = field(default=None, init=False, repr=False)
     _units: dict[str, float] = field(
         default_factory=lambda: {"s": 1, "ms": 1000, "m": 1 / 60, "h": 1 / 3600},
         init=False,
@@ -168,11 +169,14 @@ class Timer:
         """Stop the timer and return elapsed time."""
         if self._start_time is None:
             raise TimerError("Timer not running. Call .start() first.")
-        self.elapsed = (time.perf_counter() - self._start_time) * self._units[self.unit]
+        self._elapsed = (time.perf_counter() - self._start_time) * self._units[
+            self.unit
+        ]
         self._start_time = None
         if self.logger:
-            self.logger(self.text.format(self.elapsed, self.unit))
-        return self.elapsed
+            suffix = f" ({self._func_name})" if self._func_name else ""
+            self.logger(self.text.format(self._elapsed, self.unit) + suffix)
+        return self._elapsed
 
     def __enter__(self) -> "Timer":
         self.start()
@@ -182,6 +186,8 @@ class Timer:
         self.stop()
 
     def __call__(self, func: Callable) -> Callable:
+        self._func_name = func.__name__
+
         @functools.wraps(func)
         def wrapper(*args, **kwargs):
             with self:
