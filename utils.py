@@ -1,7 +1,10 @@
 """Utility functions for AoC"""
 
+import functools
 import re
-from collections.abc import Iterator, Sequence
+import time
+from collections.abc import Callable, Iterator, Sequence
+from dataclasses import dataclass, field
 from typing import TypeVar
 
 T = TypeVar("T")
@@ -103,3 +106,85 @@ def nums(string: str) -> list[int]:
         []
     """
     return [int(x) for x in re.findall(r"-?\d+", string)]
+
+
+class TimerError(Exception):
+    """Exception raised for Timer misuse."""
+
+
+@dataclass
+class Timer:
+    """
+    A simple timer supporting context manager and decorator usage.
+
+    Args:
+        text: Format string for output (receives elapsed time and unit).
+        unit: Time unit for display ("s", "ms", "m", "h").
+        logger: Callable to output the result (default: print). Set to None to suppress.
+
+    Examples:
+        As context manager
+
+        >>> with Timer():  # doctest: +SKIP
+        ...     solve()
+        Elapsed time: 0.0023 s
+
+        As decorator
+
+        >>> @Timer(unit="ms")  # doctest: +SKIP
+        ... def solve():
+        ...     pass
+
+        Silent timing (access elapsed time via `t.elapsed`)
+
+        >>> with Timer(logger=None) as t:  # doctest: +SKIP
+        ...     result = solve()
+        >>> print(f"Took {t.elapsed:.2f}s")  # doctest: +SKIP
+    """
+
+    text: str = "Elapsed time: {:0.4f} {:s}"
+    unit: str = "ms"
+    logger: Callable[[str], None] | None = print
+    _start_time: float | None = field(default=None, init=False, repr=False)
+    elapsed: float = field(default=0.0, init=False, repr=False)
+
+    _units: dict[str, float] = field(
+        default_factory=lambda: {"s": 1, "ms": 1000, "m": 1 / 60, "h": 1 / 3600},
+        init=False,
+        repr=False,
+    )
+
+    def __post_init__(self) -> None:
+        if self.unit not in self._units:
+            raise TimerError(f'Invalid unit "{self.unit}". Use: s, ms, m, h')
+
+    def start(self) -> None:
+        """Start the timer."""
+        if self._start_time is not None:
+            raise TimerError("Timer already running. Call .stop() first.")
+        self._start_time = time.perf_counter()
+
+    def stop(self) -> float:
+        """Stop the timer and return elapsed time."""
+        if self._start_time is None:
+            raise TimerError("Timer not running. Call .start() first.")
+        self.elapsed = (time.perf_counter() - self._start_time) * self._units[self.unit]
+        self._start_time = None
+        if self.logger:
+            self.logger(self.text.format(self.elapsed, self.unit))
+        return self.elapsed
+
+    def __enter__(self) -> "Timer":
+        self.start()
+        return self
+
+    def __exit__(self, *exc_info) -> None:
+        self.stop()
+
+    def __call__(self, func: Callable) -> Callable:
+        @functools.wraps(func)
+        def wrapper(*args, **kwargs):
+            with self:
+                return func(*args, **kwargs)
+
+        return wrapper
