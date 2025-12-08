@@ -3,16 +3,20 @@ _.python.venv = { path = ".venv", create = true }
 PYTHONPATH = "{{config_root}}"
 
 [tools]
-python = "pypy3.11-7.3.20"
+python = ["3.14", "pypy3.11-7.3.20"]
+
+[tasks.setup]
+description = "Install/update copier dependencies in project venv"
+run = "uv pip install --quiet copier requests beautifulsoup4 pypandoc advent-of-code-data click"
 
 [tasks.new]
 description = "Scaffold a new AoC day (defaults to today)"
+depends = ["setup"]
 run = """
 #!/usr/bin/env bash
 YEAR=${1:-$(date +%Y)}
 DAY=${2:-$(date +%-d)}
-uv run --with copier,requests,beautifulsoup4,pypandoc,advent-of-code-data,click \
-  copier copy gh:edoardob90/aoc-copier-template . --trust \
+copier copy gh:edoardob90/aoc-copier-template . --trust \
   --data year=$YEAR --data day=$DAY --data year_dir=true
 """
 
@@ -27,7 +31,7 @@ case $#:${% raw %}{#{% endraw %}1} in
   *) DAY=$1; YEAR=$2; INPUT=${3:-input.txt} ;;
 esac
 cd "$MISE_PROJECT_ROOT/$YEAR/$(printf '%02d' $DAY)"
-pypy $DAY.py "$INPUT"
+python $DAY.py "$INPUT"
 """
 
 [tasks.aot]
@@ -41,5 +45,5 @@ case $#:${% raw %}{#{% endraw %}1} in
   *) DAY=$1; YEAR=$2 ;;
 esac
 cd "$MISE_PROJECT_ROOT/$YEAR/$(printf '%02d' $DAY)"
-pypy $DAY.py example*.txt
+python $DAY.py example*.txt
 """
