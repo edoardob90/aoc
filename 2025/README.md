@@ -25,7 +25,7 @@ Solutions for [Advent of Code](https://adventofcode.com/) puzzles:
 | 5. Cafeteria           | 🐍 🐺 | 🐍 🐺 |
 | 6. Trash Compactor     | 🐍 🐺 | 🐍 🐺 |
 | 7. Laboratories        |       |       |
-| 8.                     |       |       |
+| 8. Playground          | 🐍    | 🐍    |
 | 9.                     |       |       |
 | 10.                    |       |       |
 | 11.                    |       |       |
