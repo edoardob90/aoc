@@ -26,7 +26,7 @@ Solutions for [Advent of Code](https://adventofcode.com/) puzzles:
 | 6. Trash Compactor     | ★      | ★      | [py](06/6.py) [wl](06/6.wls) |
 | 7. Laboratories        |       |       |  |
 | 8. Playground          | ★      | ★      | [py](08/8.py) |
-| 9.                     |      |        |      |
+| 9. Movie Theater       |      |        |      |
 | 10.                    |      |        |      |
 | 11.                    |      |        |      |
 | 12.                    |      |        |      |
