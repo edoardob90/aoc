@@ -18,15 +18,15 @@ Solutions for [Advent of Code](https://adventofcode.com/) puzzles:
 
 | Day | Part 1 | Part 2 | Solutions |
 |-----|--------|--------|-----------|
-| 1. Secret Entrance     | ★      | ★      | [py](01/1.py) |
-| 2. Gift Shop           | ★      | ★      | [py](02/2.py) |
-| 3. Lobby               | ★      | ★      | [py](03/3.py) |
+| 1. Secret Entrance     | ★      | ★      | [🐍](01/1.py) |
+| 2. Gift Shop           | ★      | ★      | [🐍](02/2.py) |
+| 3. Lobby               | ★      | ★      | [🐍](03/3.py) |
 | 4. Printing Department | ★      | ★      |  |
-| 5. Cafeteria           | ★      | ★      | [py](05/5.py) |
-| 6. Trash Compactor     | ★      | ★      | [py](06/6.py) |
+| 5. Cafeteria           | ★      | ★      | [🐍](05/5.py) |
+| 6. Trash Compactor     | ★      | ★      | [🐍](06/6.py) |
 | 7. Laboratories        |       |       |  |
-| 8. Playground          | ★      | ★      | [py](08/8.py) |
+| 8. Playground          | ★      | ★      | [🐍](08/8.py) |
 | 9. Movie Theater       |      |        |      |
-| 10.                    |      |        |      |
-| 11.                    |      |        |      |
+| 10. Factory            | ★    | ★       |      |
+| 11. Reactor            | ★    | ★      | [🐍](11/11.py), [🐺](11/11.wls) |
 | 12.                    |      |        |      |
