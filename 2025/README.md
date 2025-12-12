@@ -25,8 +25,8 @@ Solutions for [Advent of Code](https://adventofcode.com/) puzzles:
 | 5. Cafeteria           | ★      | ★      | [py](05/5.py) [wl](05/5.wls) |
 | 6. Trash Compactor     | ★      | ★      | [py](06/6.py) [wl](06/6.wls) |
 | 7. Laboratories        |       |       |  |
-| 8. Playground          | ★      | ★      | [py](08/8.py) |
+| 8. Playground          | ★      | ★      | [🐍](08/8.py) |
 | 9. Movie Theater       |      |        |      |
-| 10.                    |      |        |      |
-| 11.                    |      |        |      |
+| 10. Factory            | ★    | ★       |      |
+| 11. Reactor            | ★    | ★      | [🐍](11/11.py), [🐺](11/11.wls) |
 | 12.                    |      |        |      |
